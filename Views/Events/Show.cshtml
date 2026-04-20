@@ -1,1 +1,68 @@
-Show
+@model ClickParty.Models.Event
+
+@{
+    ViewData["Title"] = "Event Details";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col s12 l8">
+            <div class="form-card">
+                
+                <label class="form-field-label">EVENT TITLE</label>
+                <div class="input-field">
+                    <input type="text" value="@Model.Title" class="validate" readonly/>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m6">
+                        <label class="form-field-label">CATEGORY</label>
+                        <div class="input-field">
+                            <select class="browser-default" disabled>
+                                <option selected>@Model.Category</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col s12 m6">
+                        <label class="form-field-label">STATUS</label>
+                        <div class="input-field">
+                            <select class="browser-default" disabled>
+                                <option selected>@Model.Status</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <label class="form-field-label">DETAILS</label>
+                <div class="input-field">
+                    <textarea class="materialize-textarea" readonly>@Model.Description</textarea>
+                </div>
+
+                <label class="form-field-label">EVENT DATE</label>
+                <div class="input-field">
+                    <input type="text" value="@Model.Date.ToString("MM/dd/yyyy")" readonly/>
+                </div>
+
+                <label class="form-field-label">LOCATION</label>
+                <div class="input-field">
+                    <input type="text" value="@Model.Location" readonly/>
+                </div>
+
+                <label class="form-field-label">IMAGE URL</label>
+                <div class="input-field">
+                    <input type="text" value="@Model.Image_url" readonly/>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m4">
+                        <a asp-controller="Events" asp-action="Index"
+                           class="btn btn-form-secondary waves-effect waves-light width-100">
+                            Back to Events
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

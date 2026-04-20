@@ -35,24 +35,12 @@ body {
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 
-.app-nav-wrapper {
-    padding: 0 2rem;
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .app-brand {
     color: var(--color-green-dark) !important;
     font-weight: 700;
     font-size: 1.1rem;
-    position: static !important;
-    display: inline-block;
-    margin-right: 2rem;
-    height: auto !important;
-    line-height: normal !important;
-    flex-shrink: 0;
-    white-space: nowrap;
+    height: 64px !important;
+    line-height: 64px !important;
 }
 
 /* Links del centro del nav */

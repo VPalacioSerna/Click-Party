@@ -31,7 +31,8 @@ public class EventsController : Controller
 
   public IActionResult Show(int id) //detalles
   {
-    return View();
+    var ev = _context.events.Find(id);
+    return View(ev);
   }
 
   public IActionResult Create()

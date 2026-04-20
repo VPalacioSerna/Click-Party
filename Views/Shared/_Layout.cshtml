@@ -13,31 +13,33 @@
 </head>
 <body>
     <header>
-    <nav class="app-navbar">
-        <div class="nav-wrapper container app-nav-wrapper">
-                    
-            <a class="brand-logo app-brand" asp-area="" asp-controller="Events" asp-action="Index">Click & Party</a>
+        <nav class="app-navbar">
+            <div class="nav-wrapper container">
 
-            <a data-target="mobile-nav" class="sidenav-trigger right hide-on-large-only">
-                <i class="material-icons">menu</i>
-            </a>
-                    
-            <ul class="hide-on-med-and-down app-nav-links">
-                <li><a asp-controller="Events" asp-action="Index">Music</a></li>
-                <li><a asp-controller="Events" asp-action="Index">Sports</a></li>
-                <li><a asp-controller="Events" asp-action="Index">Festivals</a></li>
-            </ul>
-                    
-            <ul class="right hide-on-med-and-down app-nav-right">
-                <li>
-                    <a asp-controller="Events" asp-action="Create" class="btn app-btn-create waves-effect waves-light">
-                        Create Event
-                    </a>
-                </li>
-                <li><a asp-controller="Events" asp-action="Admin" class="link-admin">Admin</a></li>
-            </ul>
-        </div>
-    </nav>
+                <a class="brand-logo app-brand" asp-area="" asp-controller="Events" asp-action="Index">Click & Party</a>
+
+                <a data-target="mobile-nav" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a asp-controller="Events" asp-action="Create" class="btn app-btn-create waves-effect waves-light">
+                            Create Event
+                        </a>
+                    </li>
+                    <li><a asp-controller="Events" asp-action="Admin" class="link-admin">Admin</a></li>
+                    <li><a asp-controller="Events" asp-action="Index" class="link-admin">User</a></li>
+                </ul>
+
+                <ul class="hide-on-med-and-down" style="position:absolute; left:50%; transform:translateX(-50%);">
+                    <li><a asp-controller="Events" asp-action="Index">Music</a></li>
+                    <li><a asp-controller="Events" asp-action="Index">Sports</a></li>
+                    <li><a asp-controller="Events" asp-action="Index">Festivals</a></li>
+                </ul>
+
+            </div>
+        </nav>
 
     <ul class="sidenav" id="mobile-nav">
         <li><a asp-controller="Events" asp-action="Index">Music</a></li>
@@ -45,6 +47,7 @@
         <li><a asp-controller="Events" asp-action="Index">Festivals</a></li>
         <li class="divider"></li>
         <li><a asp-controller="Events" asp-action="Admin" class="link-admin">Admin</a></li>
+        <li><a asp-controller="Events" asp-action="Index" class="link-admin">User</a></li>
         <li>
             <a asp-controller="Events" asp-action="Create" class="btn app-btn-create waves-effect waves-light"
                style="margin: 1rem; display:block; text-align:center;">
