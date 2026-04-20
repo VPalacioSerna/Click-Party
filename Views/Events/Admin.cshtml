@@ -1,0 +1,74 @@
+@model IEnumerable<ClickParty.Models.Event>
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container">
+
+    <div class="admin-header">
+        <h1>Admin Dashboard</h1>
+        <p>
+            Manage your curated collection of experiences. Oversee schedules,
+            categories, and event visibility from one central editorial hub.
+        </p>
+    </div>
+    
+    <div class="row">
+        @foreach (var ev in Model)
+        {
+            <div class="col s12 m6 l4">
+                <div class="event-card">
+                    <div class="event-card-img">
+                        @if (!string.IsNullOrEmpty(ev.Image_url))
+                        {
+                            <img src="@ev.Image_url" alt="@ev.Title" />
+                        }
+                        else
+                        {
+                            <img src="https://via.placeholder.com/400x200/1a3d2b/ffffff?text=Event" alt="Event" />
+                        }
+                        <div class="event-badges">
+                            <span class="badge-category">@ev.Category?.ToUpper()</span>
+                            <span class="badge-status">@ev.Status?.ToUpper()</span>
+                        </div>
+                    </div>
+
+                    <div class="event-card-body">
+                        <div class="event-date-label">
+                            <i class="material-icons">calendar_today</i>
+                            @ev.Date.ToString("MMM dd, yyyy")
+                        </div>
+                        <h3 class="event-card-title">@ev.Title</h3>
+                        <p class="event-card-desc">
+                            @(ev.Description?.Length > 80 ? ev.Description.Substring(0, 80) + "..." : ev.Description)
+                        </p>
+                        <div class="event-location" style="margin-bottom:0.8rem">
+                            <i class="material-icons">place</i>
+                            @ev.Location
+                        </div>
+
+                        <div class="admin-actions">
+                            <a asp-controller="Events" asp-action="Edit" asp-route-id="@ev.Id"
+                               class="btn btn-admin btn-edit waves-effect waves-light">
+                                <i class="material-icons" style="font-size:0.85rem">edit</i> Edit
+                            </a>
+                            <a asp-controller="Events" asp-action="Show"
+                               class="btn btn-admin btn-create waves-effect waves-light">
+                                <i class="material-icons" style="font-size:0.85rem">add_circle_outline</i> Show
+                            </a>
+                            <form asp-controller="Events" asp-action="Destroy" asp-route-id="@ev.Id" method="post" style="display:inline">
+                               <input type="hidden" name="id" value="@ev.Id" />
+                                <button type="submit"
+                                        onclick="return confirm('¿Eliminar: @ev.Title?')"
+                                        class="btn btn-admin btn-delete waves-effect waves-light">
+                                    <i class="material-icons" style="font-size:0.85rem">delete</i> Delete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

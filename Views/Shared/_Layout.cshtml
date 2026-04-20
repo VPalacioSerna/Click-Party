@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ClickParty</title>
+    <script type="importmap"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/events.css" />
+    <link rel="stylesheet" href="~/ClickParty.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+    <nav class="app-navbar">
+        <div class="nav-wrapper container app-nav-wrapper">
+                    
+            <a class="brand-logo app-brand" asp-area="" asp-controller="Events" asp-action="Index">Click & Party</a>
+
+            <a data-target="mobile-nav" class="sidenav-trigger right hide-on-large-only">
+                <i class="material-icons">menu</i>
+            </a>
+                    
+            <ul class="hide-on-med-and-down app-nav-links">
+                <li><a asp-controller="Events" asp-action="Index">Music</a></li>
+                <li><a asp-controller="Events" asp-action="Index">Sports</a></li>
+                <li><a asp-controller="Events" asp-action="Index">Festivals</a></li>
+            </ul>
+                    
+            <ul class="right hide-on-med-and-down app-nav-right">
+                <li>
+                    <a asp-controller="Events" asp-action="Create" class="btn app-btn-create waves-effect waves-light">
+                        Create Event
+                    </a>
+                </li>
+                <li><a asp-controller="Events" asp-action="Admin" class="link-admin">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-nav">
+        <li><a asp-controller="Events" asp-action="Index">Music</a></li>
+        <li><a asp-controller="Events" asp-action="Index">Sports</a></li>
+        <li><a asp-controller="Events" asp-action="Index">Festivals</a></li>
+        <li class="divider"></li>
+        <li><a asp-controller="Events" asp-action="Admin" class="link-admin">Admin</a></li>
+        <li>
+            <a asp-controller="Events" asp-action="Create" class="btn app-btn-create waves-effect waves-light"
+               style="margin: 1rem; display:block; text-align:center;">
+                Create Event
+            </a>
+        </li>
+    </ul>
+</header>
+
+    <div class="container" style="flex: 1 0 auto;">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="app-footer">
+        <div class="container">
+            <div class="row valign-wrapper">
+
+                <div class="col s12 m6">
+                    <p class="app-footer-brand">Click & Party</p>
+                    <p class="app-footer-desc">
+                        Elevating discovery through intentional design and editorial expertise.
+                        We are the architects of your next great memory.
+                    </p>
+                </div>
+                <div class="col s12 m6 right-align">
+                    <a class="app-footer-link">About Us</a>
+                    <a class="app-footer-link">Terms of Service</a>
+                    <a class="app-footer-link">Privacy Policy</a>
+                    <a class="app-footer-link">Contact</a>
+                </div>
+            </div>
+
+            <div class="app-footer-copy">
+                <p>&copy; 2026 - Click & Party - All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+        });
+    </script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

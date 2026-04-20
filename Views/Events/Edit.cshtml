@@ -1,0 +1,99 @@
+@model ClickParty.Models.Event
+@{
+    ViewData["Title"] = "Edit Event";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col s12 l4">
+            <div class="form-page-left">
+                <h2>Refine Your<br />Vision.</h2>
+                <p>
+                    Update the details of your event. Every change shapes the experience you deliver.
+                </p>
+                <div class="card-panel center white-text" style="background:#1a3d2b; border-radius:12px; padding:3rem 2rem; margin-top:1rem;">
+                    <i class="material-icons" style="font-size:3rem; opacity:0.6">edit_calendar</i>
+                    <p style="font-size:0.8rem; letter-spacing:2px; margin-top:1rem; opacity:0.7">
+                        EDIT EVENT
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 l8">
+            <div class="form-card">
+                <form asp-controller="Events" asp-action="Update" method="post">
+                    <input asp-for="Id" type="hidden" />
+
+                    <label class="form-field-label">EVENT TITLE</label>
+                    <div class="input-field">
+                        <input asp-for="Title" type="text" placeholder="The Midnight Gala" class="validate" />
+                        <span asp-validation-for="Title" class="red-text" style="font-size:0.8rem"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <label class="form-field-label">CATEGORY</label>
+                            <div class="input-field">
+                                <select asp-for="Category" class="browser-default">
+                                    <option value="" disabled>Select...</option>
+                                    <option value="Music">Music</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Festival">Festival</option>
+                                </select>
+                                <span asp-validation-for="Category" class="red-text" style="font-size:0.8rem"></span>
+                            </div>
+                        </div>
+                        <div class="col s12 m6">
+                            <label class="form-field-label">STATUS</label>
+                            <div class="input-field">
+                                <select asp-for="Status" class="browser-default">
+                                    <option value="" disabled>Select...</option>
+                                    <option value="Active">Active</option>
+                                    <option value="Inactive">Inactive</option>
+                                </select>
+                                <span asp-validation-for="Status" class="red-text" style="font-size:0.8rem"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label class="form-field-label">DETAILS</label>
+                    <div class="input-field">
+                        <textarea asp-for="Description" class="materialize-textarea" placeholder="Describe the atmosphere, the people, and the soul of the event..."></textarea>
+                        <span asp-validation-for="Description" class="red-text" style="font-size:0.8rem"></span>
+                    </div>
+
+                    <label class="form-field-label">EVENT DATE</label>
+                    <div class="input-field">
+                        <input asp-for="Date" type="text" class="datepicker" placeholder="yyyy-mm-dd" />
+                        <span asp-validation-for="Date" class="red-text" style="font-size:0.8rem"></span>
+                    </div>
+
+                    <label class="form-field-label">LOCATION</label>
+                    <div class="input-field">
+                        <input asp-for="Location" type="text" placeholder="Brooklyn, NY" />
+                    </div>
+
+                    <label class="form-field-label">IMAGE URL</label>
+                    <div class="input-field">
+                        <input asp-for="Image_url" type="text" placeholder="https://..." />
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12 m4">
+                            <a asp-controller="Events" asp-action="Index" class="btn btn-form-secondary waves-effect waves-light width-100">
+                                Cancel
+                            </a>
+                        </div>
+                        <div class="col s12 m4">
+                            <button type="submit" name="action" value="publish" class="btn btn-form-publish waves-effect waves-light width-100">
+                                Update & Publish
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

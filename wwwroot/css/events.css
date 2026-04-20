@@ -1,0 +1,593 @@
+/* --- Variables de color del diseño --- */
+:root {
+    --color-green-dark: #0a5c38;
+    --color-green-mid:    #2d6a4f;
+    --color-green-light:  #d8f3dc;
+    --color-blue-light:   #cce5ff;
+    --color-purple-light: #e8d5f5;
+    --color-text-dark:    #1a1a1a;
+    --color-text-muted:   #666;
+    --color-bg-page:      #f4f7f4;
+    --color-white:        #ffffff;
+    --color-badge-music:      #2d6a4f;
+    --color-badge-sports:     #1a5276;
+    --color-badge-festivals:  #6d4c41;
+    --color-status-active:    #2d6a4f;
+    --color-status-inactive:  #888;
+}
+
+/*  Tipografia global    */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-bg-page);
+    color: var(--color-text-dark);
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    
+}
+
+/*  NAVBAR  */
+.app-navbar {
+    background-color: var(--color-white);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.app-nav-wrapper {
+    padding: 0 2rem;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-brand {
+    color: var(--color-green-dark) !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+    position: static !important;
+    display: inline-block;
+    margin-right: 2rem;
+    height: auto !important;
+    line-height: normal !important;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* Links del centro del nav */
+.app-nav-links {
+    display: flex !important;
+    align-items: center;
+    flex: 1;
+    gap: 0.8rem;
+    margin: 0;
+}
+
+.app-nav-links li a {
+    color: var(--color-text-dark) !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.app-nav-links li a:hover {
+    color: var(--color-green-mid) !important;
+}
+
+.app-nav-right {
+    display: flex !important;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.sidenav-trigger {
+    color: var(--color-green-dark) !important;
+    margin: 0 !important;
+}
+
+/* Boton "Create Event" verde */
+.app-btn-create {
+    background-color: var(--color-green-dark) !important;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    padding: 0 1.2rem;
+    height: 36px;
+    line-height: 36px;
+}
+
+.link-admin {
+    color: var(--color-green-dark) !important;
+}
+
+/*  FOOTER  */
+.app-footer {
+    background-color: var(--color-white);
+    border-top: 1px solid #e0e0e0;
+    padding: 2rem 0 1rem;
+    margin-top: 3rem;
+}
+
+.app-footer-brand {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-green-dark);
+    margin-bottom: 0.3rem;
+}
+
+.app-footer-desc {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    max-width: 320px;
+}
+
+.app-footer-link {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    margin-left: 1rem;
+}
+
+.app-footer-link:hover {
+    color: var(--color-green-mid);
+}
+
+.app-footer-copy {
+    border-top: 1px solid #eee;
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+}
+
+.app-footer-copy p {
+    font-size: 0.75rem;
+    color: #aaa;
+    margin: 0;
+}
+
+/*    INDEX - Hero section   */
+.hero-section {
+    padding: 3rem 0 2rem;
+}
+
+.hero-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 1rem;
+}
+
+.hero-title-italic {
+    font-style: italic;
+    color: var(--color-green-mid);
+}
+
+.hero-subtitle {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    max-width: 380px;
+}
+
+/*  INDEX - Filtros   */
+.filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 0.4rem 1.1rem;
+    background: var(--color-white);
+    color: var(--color-text-dark);
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--color-green-dark);
+    color: var(--color-white);
+    border-color: var(--color-green-dark);
+}
+
+/*  TARJETAS DE EVENTO (Index y Admin)  */
+.event-card {
+    background: var(--color-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    margin-bottom: 1.5rem;
+}
+
+/* Imagen superior de la tarjeta */
+.event-card-img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: #222;
+}
+
+.event-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Badges sobre la imagen (MUSIC, SPORTS, etc.) */
+.event-badges {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    gap: 6px;
+}
+
+.badge-category {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--color-white);
+    background-color: var(--color-green-dark);
+}
+
+.badge-status {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-white);
+    background-color: #555;
+}
+
+/* Badge de estado flotante (esquina inferior derecha de la imagen) */
+.status-pill {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--color-white);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--color-status-active);
+}
+
+.status-dot.inactive {
+    background-color: var(--color-status-inactive);
+}
+
+/* Cuerpo de la tarjeta */
+.event-card-body {
+    padding: 1rem 1.2rem 1.2rem;
+}
+
+.event-date-label {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 0.4rem;
+}
+
+.event-date-label .material-icons {
+    font-size: 0.9rem;
+    color: var(--color-green-mid);
+}
+
+.event-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+}
+
+.event-card-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* Pie de la tarjeta: ubicacion y accion */
+.event-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 0.8rem;
+}
+
+.event-location {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.event-location .material-icons {
+    font-size: 0.95rem;
+}
+
+.event-action-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-green-dark);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.event-action-link.sold-out {
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+/*  ADMIN DASHBOARD  */
+.admin-header {
+    padding: 2.5rem 0 1rem;
+}
+
+.admin-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+}
+
+.admin-header p {
+    color: var(--color-text-muted);
+    max-width: 500px;
+}
+
+/* Tarjetas de estadisticas */
+.stat-card {
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-card.green {
+    background-color: var(--color-green-light);
+}
+
+.stat-card.blue {
+    background-color: var(--color-blue-light);
+}
+
+.stat-card.purple {
+    background-color: var(--color-purple-light);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    line-height: 1;
+    margin-bottom: 0.8rem;
+}
+
+.stat-badge {
+    display: inline-block;
+    background-color: var(--color-green-dark);
+    color: var(--color-white);
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 3px 10px;
+}
+
+/* Botones de accion en tarjetas admin */
+.admin-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-admin {
+    border-radius: 20px !important;
+    font-size: 0.8rem !important;
+    height: 34px !important;
+    line-height: 34px !important;
+    padding: 0 1rem !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-edit {
+    background-color: #aad4f5 !important;
+    color: var(--color-text-dark) !important;
+}
+
+.btn-create {
+    background-color: #a8e6cf !important;
+    color: var(--color-text-dark) !important;
+}
+
+.btn-delete {
+    background-color: #e8a8d0 !important;
+    color: var(--color-text-dark) !important;
+}
+
+/*  CREATE / EDIT FORM  */
+.form-page-left {
+    padding: 3rem 0;
+}
+
+.form-page-left h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-green-dark);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.form-page-left p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Caja del formulario */
+.form-card {
+    background: var(--color-white);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+/* Etiquetas del formulario en mayusculas */
+.form-field-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--color-text-muted);
+    display: block;
+    margin-bottom: 0.3rem;
+    margin-top: 1rem;
+}
+
+/* Campos de texto sin los estilos rosados de Materialize */
+.form-card .input-field input,
+.form-card .input-field textarea {
+    border: 1px solid #ddd !important;
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem !important;
+    box-shadow: none !important;
+    background: #f9f9f9;
+}
+
+.form-card .input-field input:focus,
+.form-card .input-field textarea:focus {
+    border-color: var(--color-green-mid) !important;
+    box-shadow: none !important;
+    outline: none;
+}
+
+/* Quitar la linea y color rosado que pone Materialize por defecto */
+.form-card .input-field input:focus + label,
+.form-card .input-field textarea:focus + label {
+    color: var(--color-green-mid) !important;
+}
+
+.form-card .input-field .prefix.active {
+    color: var(--color-green-mid) !important;
+}
+
+/* Select de Materialize sin rosado */
+.form-card .select-wrapper input.select-dropdown:focus {
+    border-bottom: 1px solid var(--color-green-mid) !important;
+}
+
+/* Botones del formulario */
+.btn-form-primary {
+    background-color: var(--color-green-dark) !important;
+    border-radius: 24px;
+    width: 100%;
+    margin-bottom: 0.8rem;
+}
+
+.btn-form-secondary {
+    background-color: #e0e0e0 !important;
+    color: var(--color-text-dark) !important;
+    border-radius: 24px;
+}
+
+.btn-form-publish {
+    background-color: var(--color-green-mid) !important;
+    border-radius: 24px;
+}
+
+/*  MODAL DE CONFIRMACION (Eliminar)    */
+.modal-confirm .modal-content {
+    padding: 2rem;
+}
+
+.modal-confirm .modal-footer {
+    padding: 1rem 2rem;
+}
+
+.modal-confirm h5 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.modal-confirm p {
+    color: var(--color-text-muted);
+}
+
+.btn-confirm-delete {
+    background-color: #e53935 !important;
+    border-radius: 20px;
+}
+
+.btn-confirm-cancel {
+    background-color: #e0e0e0 !important;
+    color: var(--color-text-dark) !important;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+}
+
+/* Sidenav mobile */
+.sidenav {
+    padding-top: 1rem;
+}
+
+.sidenav li > a {
+    color: var(--color-text-dark) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.sidenav li > a:hover {
+    color: var(--color-green-mid) !important;
+    background-color: var(--color-green-light) !important;
+}
+
+.sidenav .divider {
+    margin: 0.5rem 0;
+}
+
+@media only screen and (max-width: 992px) {
+    .app-nav-wrapper {
+        padding: 0 1rem;
+    }
+
+    .app-brand {
+        max-width: calc(100% - 60px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
